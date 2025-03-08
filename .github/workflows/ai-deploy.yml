@@ -24,3 +24,6 @@ jobs:
     steps: 
       - name: "Execute Deployment Decision"
         run: your script where AI determines if code should be published
+        env:
+           ACTIONS_RUNNER_DEBUG: true
+           ACTIONS_STEP_DEBUG: true
