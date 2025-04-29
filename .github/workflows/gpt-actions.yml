@@ -7,21 +7,21 @@ on:
     pull_request:
       - main
 
-nobs:
+jobs:
   analyze_code:
     name: "Ai-Powered Code Review"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Code"
-        uses:: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: "Setup Python"
         uses: actions/setup-python@v3
         with:
           python-version: '3.11'
 
-      - name: "Install Llmama.cpp"
-        run: pis install llama-cpp-python
+      - name: "Install Dependencies"
+        run: pip install -r requirements.txt
 
       - name: "Run AI Code Review"
         run: python .github/scripts/gpt_code_review.py
@@ -31,5 +31,5 @@ nobs:
     runs-on: ubuntu-latest
     needs: analyze_code
     steps:
-      - name: "Run LLLM for
-        run: python .github/scripts/gpt_deploy_decision.py
+      - name: "Execute Deployment Decision"
+        run: python ai_workflow.py

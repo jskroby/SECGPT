@@ -13,7 +13,7 @@ jobs:
       - name: "Checkout Code"
         uses: actions/checkout@v3
       - name: "Install Dependencies"
-        run: requirements.install
+        run: pip install -r requirements.txt
       - name: "AI Analysis test"
         run: python ai_workflow.py
 
@@ -23,7 +23,7 @@ jobs:
     needs: test-ai
     steps: 
       - name: "Execute Deployment Decision"
-        run: your script where AI determines if code should be published
+        run: python ai_workflow.py
         env:
            ACTIONS_RUNNER_DEBUG: true
            ACTIONS_STEP_DEBUG: true
