@@ -6,18 +6,18 @@ Secure GPT based on LlamaIndex for applications with security features.
 
 Use the following commands to install SECGPT with pip:
 
-```bash
+\`\`\`bash
 git clone https://github.com/jskroby/SECGPT
 cd SECGPT
 pip install -r requirements.txt
-```
+\`\`\`
 
 ## Running SECGPT as an API
 
-```python
+\`\`\`python
 from secgpt.core import api
 api.generate_response("Hello, this is SECGPT.")
-```
+\`\`\`
 
 ## Running the AI-powered deployment workflow
 
